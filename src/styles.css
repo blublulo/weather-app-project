@@ -1,3 +1,154 @@
+body {
+  display: block;
+  background: radial-gradient(
+    905px at 4.9% 85.8%,
+    rgb(255, 243, 242) 0.1%,
+    rgb(255, 247, 220) 57.6%
+  );
+  margin: 30px;
+}
+
+h1,
+h2,
+h3,
+p,
+li,
+.forecast {
+  font-family: "Josefin Sans", sans-serif;
+  text-align: left;
+}
+
 h1 {
+  color: #594729;
+  font-weight: 900;
+  font-size: 40px;
+  margin: 8 auto;
+  margin-block-end: 0px;
+}
+h2 {
+  color: #ed7179;
+  font-weight: 400;
+  font-size: 20px;
+  margin-block-end: 6px;
+}
+h3 {
+  color: #febd3d;
+  font-family: "Monoton", cursive;
+  font-size: 80px;
+  font-weight: 200;
+  text-align: right;
+}
+
+p,
+ul {
+  color: #594729;
+  margin: 0 auto;
+  padding: 0%;
+}
+
+p {
+  font-size: 14px;
+}
+
+li {
+  list-style: none;
+  font-size: 14px;
+}
+
+a {
+  color: #febd3d;
+  text-decoration: none;
+  transition: ease-in-out, 200ms;
+}
+
+a:hover {
+  color: #ed7179;
+  text-decoration: underline;
+}
+
+.container {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgba(216, 241, 230, 0.46) 0.1%,
+    rgba(233, 226, 226, 0.28) 90.1%
+  );
+  max-width: 600px;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.degree {
+  color: #febd3d;
+  position: relative;
+  top: -100px;
+  right: -120px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  display: block;
+}
+
+.search-bar {
+  display: block;
+  width: 102%;
+  margin-bottom: 16px;
+}
+
+#search-input {
+  border-radius: 20px;
+  padding: 6px 8px;
+  border: none;
+  font-size: 12px;
+  font-style: italic;
+  opacity: 90%;
+}
+
+.location {
+  display: block;
+  width: 150%;
+  margin-bottom: 16px;
   text-align: center;
+  color: #594729;
+  border-radius: 20px;
+  border: 0px;
+  background-color: #fff;
+  transition: ease-in-out, 150ms;
+}
+
+.location:hover {
+  color: #febd3d;
+}
+
+.today {
+  position: relative;
+  top: 40px;
+  right: 50px;
+}
+
+.today-icon {
+  color: #594729;
+  text-align: right;
+  font-size: 32px;
+  position: relative;
+  top: 38px;
+  right: -182px;
+}
+
+.lower-part {
+  margin-top: 20px;
+}
+
+.forecast {
+  color: #594729;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+  border-radius: 12px;
+  transition: 200ms ease-in-out;
+  padding: 30px 0 30px 0;
+}
+
+.forecast:hover {
+  background: #fdcab7;
+  fill-opacity: 50%;
 }
