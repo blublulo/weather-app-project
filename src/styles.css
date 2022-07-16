@@ -125,13 +125,11 @@ a:hover {
   right: 50px;
 }
 
-.today-icon {
-  color: #594729;
-  text-align: right;
-  font-size: 32px;
+#today-icon {
   position: relative;
-  top: 38px;
-  right: -182px;
+  top: 25px;
+  left: 255px;
+  width: 60%;
 }
 
 .lower-part {

@@ -31,6 +31,14 @@ function displayCityData(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  let todayIcon = document.querySelector("#today-icon");
+
+  todayIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
+  console.log(response.data);
 }
 
 function search(city) {
