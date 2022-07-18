@@ -23,9 +23,8 @@ function displayNow() {
 }
 
 function displayCityData(response) {
-  document.querySelector("#temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = response.data.main.temp;
+  document.querySelector("#temp").innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
@@ -68,11 +67,35 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchPosition);
 }
 
+function changeToCelsius(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  document.querySelector("#temp").innerHTML = Math.round(celsiusTemperature);
+}
+
+function changeToFahrenheit(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+  document.querySelector("#temp").innerHTML = Math.round(
+    (celsiusTemperature * 9) / 5 + 32
+  );
+}
+
 displayNow();
 search("Hong Kong");
+
+let celsiusTemperature = null;
 
 let searchCity = document.querySelector("form.search-bar");
 searchCity.addEventListener("submit", findCityData);
 
 let searchLocation = document.querySelector("#current-location");
 searchLocation.addEventListener("click", getCurrentLocation);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", changeToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", changeToCelsius);

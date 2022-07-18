@@ -56,7 +56,7 @@ li {
 }
 
 a {
-  color: #febd3d;
+  color: #594729;
   text-decoration: none;
   transition: ease-in-out, 200ms;
 }
@@ -78,14 +78,25 @@ a:hover {
 }
 
 .degree {
-  color: #febd3d;
+  color: #594729;
   position: relative;
   top: -100px;
-  right: -120px;
+  right: -125px;
   font-size: 20px;
   font-weight: 600;
   line-height: 30px;
   display: block;
+}
+
+.degree .active {
+  color: #febd3d;
+  cursor: default;
+  text-decoration: none;
+}
+
+.degree .active:hover {
+  text-decoration: none;
+  color: #febd3d;
 }
 
 .search-bar {
@@ -149,4 +160,10 @@ a:hover {
 .forecast:hover {
   background: #fdcab7;
   fill-opacity: 50%;
+}
+
+#github {
+  font-size: 10pt;
+  display: block;
+  margin-top: 8pt;
 }
