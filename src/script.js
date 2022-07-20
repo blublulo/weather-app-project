@@ -83,8 +83,25 @@ function changeToFahrenheit(event) {
   );
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["FRI", "SAT", "SUN", "MON", "TUE", "WED"];
+  let forecastHTML = "";
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col-2 forecast-info">
+          ${day}<br /><i class="fa-solid fa-cloud-rain"></i><br />28° / 30°
+        </div>
+    `;
+    forecastElement.innerHTML = forecastHTML;
+  });
+}
+
 displayNow();
 search("Hong Kong");
+displayForecast();
 
 let celsiusTemperature = null;
 

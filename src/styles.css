@@ -13,7 +13,7 @@ h2,
 h3,
 p,
 li,
-.forecast {
+.forecast-info {
   font-family: "Josefin Sans", sans-serif;
   text-align: left;
 }
@@ -143,11 +143,11 @@ a:hover {
   width: 60%;
 }
 
-.lower-part {
+#forecast {
   margin-top: 20px;
 }
 
-.forecast {
+.forecast-info {
   color: #594729;
   text-align: center;
   line-height: 20px;
@@ -157,7 +157,7 @@ a:hover {
   padding: 30px 0 30px 0;
 }
 
-.forecast:hover {
+.forecast-info:hover {
   background: #fdcab7;
   fill-opacity: 50%;
 }
