@@ -1,10 +1,6 @@
 body {
   display: block;
-  background: radial-gradient(
-    905px at 4.9% 85.8%,
-    rgb(255, 243, 242) 0.1%,
-    rgb(255, 247, 220) 57.6%
-  );
+  background: #fffde0;
   margin: 30px;
 }
 
@@ -67,13 +63,9 @@ a:hover {
 }
 
 .container {
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgba(216, 241, 230, 0.46) 0.1%,
-    rgba(233, 226, 226, 0.28) 90.1%
-  );
+  background: #b8d2a310;
   max-width: 600px;
-  padding: 30px;
+  padding: 35px;
   border-radius: 20px;
 }
 
@@ -154,7 +146,10 @@ a:hover {
   font-size: 14px;
   border-radius: 12px;
   transition: 200ms ease-in-out;
-  padding: 30px 0 30px 0;
+  padding: 20px 0 20px 0;
+  margin: 4.5px;
+  width: 15%;
+  background: #fdcab73d;
 }
 
 .forecast-info:hover {
