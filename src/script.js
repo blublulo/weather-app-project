@@ -37,7 +37,7 @@ function displayCityData(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
-  console.log(response.data);
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -83,25 +83,50 @@ function changeToFahrenheit(event) {
   );
 }
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["FRI", "SAT", "SUN", "MON", "TUE", "WED"];
+  console.log(forecast);
+
   let forecastHTML = "";
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.shift();
+  forecast.forEach(function (day, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
         <div class="col-2 forecast-info">
-          ${day}<br /><i class="fa-solid fa-cloud-rain"></i><br />28° / 30°
+          ${formatDay(day.dt)}
+          <br />
+          <img id="#forecast-icon" src=
+          "http://openweathermap.org/img/wn/${
+            day.weather[0].icon
+          }@2x.png" width=50%
+      >
+          <br />
+          ${Math.round(day.temp.max)}° / ${Math.round(day.temp.min)}°
         </div>
     `;
-    forecastElement.innerHTML = forecastHTML;
+      forecastElement.innerHTML = forecastHTML;
+    }
   });
+}
+
+function getForecast(coordinates) {
+  let apiKey = "44c8ae2ea57987a781d7fe9181c8c0cd";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 displayNow();
 search("Hong Kong");
-displayForecast();
 
 let celsiusTemperature = null;
 
